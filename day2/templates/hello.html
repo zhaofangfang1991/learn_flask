@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flask_渲染模板</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" >
+</head>
+<body>
+    <h1>{{name}}</h1>
+
+    {% if name %}
+        <h1>hello {{name}}</h1>
+    {% else %}
+        <h1>hello, there is no name vari...</h1>
+    {% endif %}
+</body>
+</html>

@@ -29,4 +29,16 @@ def create_app(test_config=None):
     def hello():
         return 'hello, world'
 
+    # 在工厂中导入并调用数据库相关的内容
+    from . import db
+    db.init_app(app)
+
+    # 蓝图的第二步：在工厂函数中注册蓝图
+    from . import auth
+    app.register_blueprint(auth.bp)
+
+    from . import blog
+    app.register_blueprint(blog.bp)
+    app.add_url_rule('/', endpoint='index') # 将项目端点名称index 和 / 相关联
+
     return app

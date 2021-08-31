@@ -1,3 +1,4 @@
+# 描述项目及其从属的文件
 from setuptools import find_packages, setup
 
 setup(
